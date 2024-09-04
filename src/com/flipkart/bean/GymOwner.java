@@ -1,6 +1,6 @@
 package com.flipkart.bean;
 
-public class GymOwner {
+public class GymOwner extends User{
     private int ownerId;
     private String ownerName;
     private String ownerEmailAddress;
