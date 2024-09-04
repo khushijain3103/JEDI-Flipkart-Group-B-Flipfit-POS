@@ -1,6 +1,6 @@
 package com.flipkart.bean;
 
-public class Gym_Center {
+public class GymCenter {
     private int id;
     private String gymName;
     private String gymEmailAddress;
@@ -8,7 +8,7 @@ public class Gym_Center {
     private String gymLocation;
     private int numOfSeats;
 
-    public Gym_Center() {
+    public GymCenter() {
     }
 
     public int getId() {

@@ -1,13 +1,13 @@
 package com.flipkart.bean;
 
-public class Booked_Slot {
+public class BookedSlot {
     private int id;
     private int gymCentreId;
     private int slotId;
     private String custEmail;
     private String date;
 
-    public Booked_Slot() {
+    public BookedSlot() {
     }
 
     public int getId() {
