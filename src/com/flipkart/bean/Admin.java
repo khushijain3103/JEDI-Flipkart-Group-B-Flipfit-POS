@@ -1,6 +1,6 @@
 package com.flipkart.bean;
 
-public class Admin {
+public class Admin extends User{
     private int adminId;
     private String adminName;
     private String adminEmailAddress;
