@@ -19,7 +19,7 @@ public class FlipFitApplicationMainClient {
 
             switch (choice) {
                 case 1: {
-                    // Login
+
                     System.out.println("Login");
                     System.out.print("Enter your emailId:> ");
                     String username = sc.next();
