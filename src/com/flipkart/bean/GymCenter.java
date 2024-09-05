@@ -1,14 +1,20 @@
 package com.flipkart.bean;
 
+import java.util.Random;
+
 public class GymCenter {
     private int id;
     private String gymName;
     private String gymEmailAddress;
     private boolean isApproved;
     private String gymLocation;
-    private int numOfSeats;
 
-    public GymCenter() {
+    public GymCenter(String gymName , String gymEmailAddress , String gymLocation) {
+        this.gymName = gymName;
+        this.gymEmailAddress = gymEmailAddress;
+        this.gymLocation = gymLocation;
+        this.id = new Random().nextInt();
+        this.isApproved = false;
     }
 
     public int getId() {
@@ -51,11 +57,4 @@ public class GymCenter {
         this.gymLocation = gymLocation;
     }
 
-    public int getNumOfSeats() {
-        return this.numOfSeats;
-    }
-
-    public void setNumOfSeats(int numOfSeats) {
-        this.numOfSeats = numOfSeats;
-    }
 }

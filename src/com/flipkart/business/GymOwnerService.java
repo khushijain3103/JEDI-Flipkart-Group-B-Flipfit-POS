@@ -1,23 +1,33 @@
 package com.flipkart.business;
 
-public class GymOwnerService{
-    public static void viewUpcomingBookings(){
+import com.flipkart.bean.*;
+import com.flipkart.business.interfaces.IFlipFitGymOwner;
+import com.flipkart.exceptions.InvalidChoiceException;
+
+public class GymOwnerService implements IFlipFitGymOwner {
+    @Override
+    public  void viewAllBookings(){
         System.out.println("All upcoming bookings printed");
     }
 
-    public static void viewPastBookings(){
-        System.out.println("All past bookings printed");
-    }
-
-    public static void addSlot(){
-        System.out.println("New slot added");
-    }
-
-    public static void deleteSlot(){
+    @Override
+    public  void deleteSlot(int slotID){
         System.out.println("Slot deleted");
     }
 
-    public static void changePassword(){
-        System.out.println("Password changed");
+    @Override
+    public void addSlot(Slot flipFitSlot) {
+        System.out.println("Sot is added");
+    }
+
+    @Override
+    public void addCenter(GymCenter flipFitGymCentre) throws InvalidChoiceException
+    {
+        System.out.println("center is added");
+    }
+
+    @Override
+    public void viewAllCenter() {
+        System.out.println("All the available centers");
     }
 }

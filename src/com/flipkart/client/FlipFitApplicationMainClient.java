@@ -1,9 +1,11 @@
 package com.flipkart.client;
 
+import com.flipkart.exceptions.InvalidChoiceException;
+
 import java.util.*;
 
 public class FlipFitApplicationMainClient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidChoiceException {
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do {

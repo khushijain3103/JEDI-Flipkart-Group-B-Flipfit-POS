@@ -1,13 +1,18 @@
 package com.flipkart.bean;
 
+import java.util.Random;
+
 public class Slot {
     private int gymId;
     private int slotId;
-    private int date;
-    private int customerId;
+    private int seatAvailable;
     private String time;
 
-    public Slot() {
+    public Slot(int gymId , int seatAvailable , String time) {
+        this.gymId = gymId;
+        this.seatAvailable = seatAvailable;
+        this.time = time;
+        this.slotId = new Random().nextInt();
     }
 
     public int getGymId() {
@@ -26,20 +31,12 @@ public class Slot {
         this.slotId = slotId;
     }
 
-    public int getDate() {
-        return this.date;
+    public int getSeatAvailable() {
+        return this.seatAvailable;
     }
 
-    public void setDate(int date) {
-        this.date = date;
-    }
-
-    public int getCustomerId() {
-        return this.customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setSeatAvailable(int seatAvailable) {
+        this.seatAvailable = seatAvailable;
     }
 
     public String getTime() {
