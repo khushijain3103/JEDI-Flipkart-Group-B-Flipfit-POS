@@ -2,8 +2,12 @@ package com.flipkart.client;
 
 import java.util.*;
 
+import com.flipkart.business.AdminService;
+
 public class FlipFitApplicationMainClient {
     public static void main(String[] args) {
+
+        AdminService adminService = new AdminService();
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do {
@@ -38,6 +42,7 @@ public class FlipFitApplicationMainClient {
                         }
                         case "Admin": {
                             // admin menu
+                            adminService.adminLogin();
                             System.out.println("Admin Menu");
                             FlipFitAdminClientMenu.showMenu();
                             break;

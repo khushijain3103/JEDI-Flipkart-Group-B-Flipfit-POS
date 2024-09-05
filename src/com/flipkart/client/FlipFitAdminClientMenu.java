@@ -4,44 +4,52 @@ import com.flipkart.business.AdminService;
 import java.util.*;
 
 public class FlipFitAdminClientMenu{
-    public static void login(){
-        Scanner sc = new Scanner(System.in);
-        String username,password;
-
-        System.out.println("Enter username: ");
-        username = sc.nextLine();
-
-        System.out.println("Enter password: ");
-        password = sc.nextLine();
-
-        boolean verifiedCredentials = true;
-        // if DB verification successful, verifiedCredential = true;
-
-        if(verifiedCredentials){
-            System.out.println("Admin login successful. Please proceed to menu.");
-            FlipFitAdminClientMenu.showMenu();
-        } else System.out.println("Admin login failed. Retry.");
-    }
-
     public static void showMenu(){
-        System.out.println("1 for approving a GymOwner");
-        System.out.println("2 for verifying a GymOwner");
-        System.out.println("3 for removing a GymOwner");
 
         Scanner sc = new Scanner(System.in);
 
-        int choice = sc.nextInt();
+        int choice=0;
+        AdminService adminService = new AdminService();
 
+        while(choice!=8){
+
+        System.out.println("FlipFit Admin Menu");
+
+        System.out.println("1 View Pending Owners List");
+        System.out.println("2 View approved Owners List");
+        System.out.println("3 View Customers List");
+        System.out.println("4 View Approved Gym centers of an Owner");
+        System.out.println("5 Validate an Owner");
+        System.out.println("6 Delete an Owner");
+        System.out.println("7 Delete a Customer");
+        System.out.println("8 Logout");
+
+        choice = sc.nextInt();
+       
         switch(choice){
             case 1:
-                AdminService.approveGymOwner();
+                adminService.getPendingOwnerList();
                 break;
             case 2:
-                AdminService.verifyingGymOwner();
+                adminService.getApprovedOwnerList();
                 break;
             case 3:
-                AdminService.removeGymOwner();
+                adminService.getCustomerList(); 
                 break;
+            case 4:
+                adminService.getGymCentreUsingOwnerId();
+                break;
+            case 5:
+                adminService.validateOwner();
+                break;
+            case 6:
+                adminService.deleteOwner();
+                break;
+            case 7:
+                adminService.deleteCustomer();
+                break;
+            default: break;
+            }
         }
     }
 
