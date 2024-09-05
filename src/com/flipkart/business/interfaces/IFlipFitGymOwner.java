@@ -9,4 +9,5 @@ public interface IFlipFitGymOwner {
     public void viewAllBookings();
     public void deleteSlot(int slotID);
     public void addSlot(Slot flipFitSlot);
+    public void viewAllSlots();
 }

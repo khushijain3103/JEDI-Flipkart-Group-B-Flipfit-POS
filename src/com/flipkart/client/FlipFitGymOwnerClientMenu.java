@@ -10,6 +10,9 @@ import com.flipkart.exceptions.InvalidChoiceException;
 import java.util.Scanner;
 
 public class FlipFitGymOwnerClientMenu{
+
+    static GymOwnerService gymOwnerService = new GymOwnerService();
+
     public static void login() throws InvalidChoiceException {
         Scanner sc = new Scanner(System.in);
         String username,password;
@@ -52,12 +55,13 @@ public class FlipFitGymOwnerClientMenu{
         System.out.println("Enter 1 for viewing all bookings");
         System.out.println("Enter 2 for adding a slot");
         System.out.println("Enter 3 for deleting a slot");
-        System.out.println("Enter 4 for adding a centre");
-        System.out.println("Enter 5 for viewing all centres");
+        System.out.println("Enter 4 to view all Slots");
+        System.out.println("Enter 5 for adding a centre");
+        System.out.println("Enter 6 for viewing all centres");
 
         int choice = sc.nextInt();
 
-        GymOwnerService gymOwnerService = new GymOwnerService();
+
 
         switch(choice){
             case 1:
@@ -85,6 +89,10 @@ public class FlipFitGymOwnerClientMenu{
 
                 break;
             case 4:
+                gymOwnerService.viewAllSlots();
+                break;
+
+            case 5:
 
                 System.out.println("Enter your GymName");
                 String gymName = sc.next();
@@ -99,7 +107,7 @@ public class FlipFitGymOwnerClientMenu{
 
                 gymOwnerService.addCenter(center);
                 break;
-            case 5:
+            case 6:
                 gymOwnerService.viewAllCenter();
                 break;
 
