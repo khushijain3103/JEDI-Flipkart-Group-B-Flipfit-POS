@@ -11,7 +11,7 @@ public class FlipFitAdminClientMenu{
         int choice=0;
         AdminService adminService = new AdminService();
 
-        while(choice!=8){
+        while(choice!=9){
 
         System.out.println("FlipFit Admin Menu");
 
@@ -20,9 +20,10 @@ public class FlipFitAdminClientMenu{
         System.out.println("3 View Customers List");
         System.out.println("4 View Approved Gym centers of an Owner");
         System.out.println("5 Validate an Owner");
-        System.out.println("6 Delete an Owner");
-        System.out.println("7 Delete a Customer");
-        System.out.println("8 Logout");
+        System.out.println("6 Validate a Gym Center");
+        System.out.println("7 Delete an Owner");
+        System.out.println("8 Delete a Customer");
+        System.out.println("9 Logout");
 
         choice = sc.nextInt();
        
@@ -43,9 +44,12 @@ public class FlipFitAdminClientMenu{
                 adminService.validateOwner();
                 break;
             case 6:
-                adminService.deleteOwner();
+                adminService.validateGymCenter();
                 break;
             case 7:
+                adminService.deleteOwner();
+                break;
+            case 8:
                 adminService.deleteCustomer();
                 break;
             default: break;

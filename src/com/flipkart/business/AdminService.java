@@ -22,6 +22,8 @@ public class AdminService implements IFlipFitAdmin {
     private Map<Integer, Customer> customers;
     private Map<Integer, GymCenter> gymCenters;
     private Map<Integer, GymOwner> pendingGymOwners;
+    private Map<Integer, GymCenter> pendingGymCenters;
+    
 
     // Constructor to initialize collections
     public AdminService() {
@@ -92,7 +94,7 @@ public class AdminService implements IFlipFitAdmin {
         boolean isAuthenticated = true;              //customerService.authenticate(username, password);
 
         if (isAuthenticated) {
-            System.out.println("Login successful. Welcome, " + username + "!");
+            System.out.println("Login successful.");
             
         } else {
             System.out.println("Login failed. Please check your username and password.");
@@ -177,6 +179,21 @@ public class AdminService implements IFlipFitAdmin {
         return false;
     }
 
+    // Validate and approve gym center 
+    @Override
+    public boolean validateGymCenter() {
+
+        System.out.println("Enter the ID of the Gym Center to validate:");
+        int gymId = scanner.nextInt();
+        GymCenter gym = pendingGymCenters.remove(gymId); // Approve by removing from pending list
+        if (gym != null) {
+            gymCenters.put(gymId, gym);  // Add to approved gym centers list
+            return true;
+        }
+        System.out.println("Gym Center not found with gymId : " + gymId);
+        return false;
+    }
+
     // Delete gym owner by ID
     @Override
     public boolean deleteOwner() {
@@ -193,7 +210,7 @@ public class AdminService implements IFlipFitAdmin {
         return false;
     }
 
-    // Delete Customer owner by ID
+    // Delete Customer by ID
     @Override
     public boolean deleteCustomer() {
 

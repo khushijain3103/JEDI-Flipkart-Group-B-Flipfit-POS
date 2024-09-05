@@ -13,6 +13,7 @@ public interface IFlipFitAdmin {
     public List<Customer> getCustomerList();
     public List<GymCenter> getGymCentreUsingOwnerId();
     public boolean validateOwner();
+    public boolean validateGymCenter();
     public boolean deleteOwner();
     public boolean deleteCustomer();
 }
