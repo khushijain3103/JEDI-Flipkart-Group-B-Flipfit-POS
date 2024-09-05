@@ -1,6 +1,6 @@
 package com.flipkart.bean;
 
-public class Customer {
+public class Customer extends User{
     private int customerId;
     private String customerName;
     private String customerAddress;
