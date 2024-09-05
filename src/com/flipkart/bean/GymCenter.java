@@ -7,6 +7,7 @@ public class GymCenter {
     private boolean isApproved;
     private String gymLocation;
     private int numOfSeats;
+    private int ownerId;
 
     public GymCenter() {
     }
@@ -17,6 +18,14 @@ public class GymCenter {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getOwnerId(){
+        return this.ownerId;
+    }
+
+    public void setOwnerId(int ownerId){
+        this.ownerId = ownerId;
     }
 
     public String getGymName() {
