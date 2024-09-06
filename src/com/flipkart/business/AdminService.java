@@ -121,7 +121,7 @@ public class AdminService implements IFlipFitAdmin {
         System.out.println("Pending Gym Owners:");
         List<GymOwner> pendingOwners = new ArrayList<>(pendingGymOwners.values());
         for (GymOwner owner : pendingOwners) {
-            System.out.println(owner); // Assuming GymOwner has a suitable toString() method
+            System.out.println("Gym Owner ID: " + owner.getOwnerId() + ", Gym Name: " + owner.getOwnerName());
         }
         return pendingOwners;
     }
@@ -132,7 +132,7 @@ public class AdminService implements IFlipFitAdmin {
         System.out.println("Approved Gym Owners:");
         List<GymOwner> approvedOwners = new ArrayList<>(gymOwners.values());
         for (GymOwner owner : approvedOwners) {
-            System.out.println(owner);
+            System.out.println("Gym Owner ID: " + owner.getOwnerId() + ", Gym Name: " + owner.getOwnerName());
         }
         return approvedOwners;
     }
@@ -143,7 +143,7 @@ public class AdminService implements IFlipFitAdmin {
         System.out.println("All Customers:");
         List<Customer> users = new ArrayList<>(customers.values());
         for (Customer user : users) {
-            System.out.println(user);
+            System.out.println("User ID: " + user.getCustomerId()+", Customer Name: " + user.getCustomerName());
         }
         return users;
     }
